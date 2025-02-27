@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\RolesEnum;
 use App\Filament\Resources\DepartamentResource\Pages;
 use App\Filament\Resources\DepartamentResource\RelationManagers;
 use App\Models\Departament;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Checkbox;
@@ -68,7 +70,7 @@ class DepartamentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\CategoriesRelationManager::class
         ];
     }
 
@@ -79,5 +81,11 @@ class DepartamentResource extends Resource
             'create' => Pages\CreateDepartament::route('/create'),
             'edit' => Pages\EditDepartament::route('/{record}/edit'),
         ];
+    }
+
+    public static function canviewAny():bool
+    {
+        $user = Filament::Auth()->user();
+        return $user && $user->hasRole(RolesEnum::Admin);
     }
 }
