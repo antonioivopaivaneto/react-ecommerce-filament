@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\DepartamentResource\Pages;
+namespace App\Filament\Resources\DepartmentResource\Pages;
 
-use App\Filament\Resources\DepartamentResource;
+use App\Filament\Resources\DepartmentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateDepartament extends CreateRecord
+class CreateDepartment extends CreateRecord
 {
-    protected static string $resource = DepartamentResource::class;
+    protected static string $resource = DepartmentResource::class;
 
     protected function getRedirectUrl(): string
     {

@@ -3,9 +3,9 @@
 namespace App\Filament\Resources;
 
 use App\Enums\RolesEnum;
-use App\Filament\Resources\DepartamentResource\Pages;
-use App\Filament\Resources\DepartamentResource\RelationManagers;
-use App\Models\Departament;
+use App\Filament\Resources\DepartmentResource\Pages;
+use App\Filament\Resources\DepartmentResource\RelationManagers;
+use App\Models\Department;
 use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
@@ -19,9 +19,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Psy\Util\Str;
 
-class DepartamentResource extends Resource
+class DepartmentResource extends Resource
 {
-    protected static ?string $model = Departament::class;
+    protected static ?string $model = Department::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -77,9 +77,9 @@ class DepartamentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListDepartaments::route('/'),
-            'create' => Pages\CreateDepartament::route('/create'),
-            'edit' => Pages\EditDepartament::route('/{record}/edit'),
+            'index' => Pages\Listdepartments ::route('/'),
+            'create' => Pages\CreateDepartment::route('/create'),
+            'edit' => Pages\EditDepartment::route('/{record}/edit'),
         ];
     }
 

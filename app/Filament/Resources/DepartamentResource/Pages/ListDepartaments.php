@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\DepartamentResource\Pages;
+namespace App\Filament\Resources\DepartmentResource\Pages;
 
-use App\Filament\Resources\DepartamentResource;
+use App\Filament\Resources\DepartmentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListDepartaments extends ListRecords
+class Listdepartments  extends ListRecords
 {
-    protected static string $resource = DepartamentResource::class;
+    protected static string $resource = DepartmentResource::class;
 
     protected function getHeaderActions(): array
     {
